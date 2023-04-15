@@ -9,22 +9,34 @@ import './App.css';
 
 
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className='App'>
-        <h1>
-        Heyyyyy I'm Class Component !!!!!!
-        </h1>
-      </div>
-    )
-  }
-}
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <div className='App'>
+//         <h1>
+//         Heyyyyy I'm Class Component !!!!!!
+//         </h1>
+//       </div>
+//     )
+//   }
+// }
 
 
+// import React from 'react'
 
+// function App() {
+//   return (
+//     <div>
+//       <h1>  
+//             Hello i'm trying my best
+//         </h1>
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 // Functional React Component
@@ -96,3 +108,20 @@ export default class App extends Component {
 // }
 
 // export default App
+
+
+
+
+import React from 'react'
+import Events from './Components/Events';
+
+
+function App() {
+  return (
+    <div className='eventsApp'>
+      <Events/>
+    </div>
+  )
+}
+
+export default App

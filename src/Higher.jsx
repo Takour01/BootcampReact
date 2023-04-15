@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-const Higher = (Component) =>
-  function HOC() {
+function Higher(Component) {
+  return function HOC() {
     return (
       <div className="app">
         <Navbar />
@@ -11,5 +11,6 @@ const Higher = (Component) =>
       </div>
     );
   };
+}
 
 export default Higher;
