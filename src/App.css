@@ -23,6 +23,16 @@
   gap: 2em;
 }
 
+.para{
+  text-indent: 1em;
+  margin: .5em 5em;
+  padding: 0;
+  padding-bottom:.5em ;
+  /* margin-bottom: 1em; */
+  font-size: 1.3rem;
+  border-bottom: 1px solid black;
+}
+
 .nav{
   width: 100vw;
   padding: 1em 10%;

@@ -5,6 +5,29 @@ function Events() {
   const [state, setState] = React.useState("");
   const [change, setChange] = React.useState("");
 
+  const pRefs = React.useRef([]);
+
+  const handleHover = (text) => {
+    setState(text);
+  };
+
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   // React.useEffect(() => {
   //   const handleResize = (event) => {
   //     // Handle the resize event here
@@ -88,6 +111,22 @@ function Events() {
         <button type="submit">submit</button>
         <div className="shower">{state}</div>
       </form>
+
+      {data
+        .filter((item, index) => index < 10)
+        .map((item, index) => {
+          return (
+            <p
+              key={index}
+              className="para"
+              ref={(el) => (pRefs.current[index] = el)}
+              onMouseEnter={() => handleHover(pRefs.current[index].textContent)}
+            >
+              {item.title}
+            </p>
+          );
+        })}
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Id repudiandae
         debitis ut eos nobis impedit porro ipsum iste dolorem quae placeat quod
